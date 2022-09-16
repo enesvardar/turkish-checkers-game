@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useSelector } from "react-redux";
+import { Row } from "./companents/Row";
+import { Header } from "./companents/Header";
+import { Player1 } from "./companents/Player1";
+import { Player2 } from "./companents/Player2";
 
 function App() {
+  const game = useSelector((state) => state.game);
+  const elementArray = game.elementArray;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Header />
+
+      <div className="container">
+
+        <Player1/>
+
+        <div className="checkers">
+          {elementArray.map((row, r_i) => {
+            return <Row key={r_i} row={row} r_i={r_i} />;
+          })}
+        </div>
+
+        <Player2/>
+
+
+      </div>
     </div>
   );
 }
