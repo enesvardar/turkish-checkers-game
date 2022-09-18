@@ -1,3 +1,9 @@
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/Ekran.JPG" width="500" height="300"/>
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/Ekran1.JPG" width="500" height="300"/>
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/Ekran2.JPG" width="500" height="300"/>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
