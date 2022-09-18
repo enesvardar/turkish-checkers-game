@@ -1,8 +1,9 @@
+<a href="url">https://heartfelt-puppy-2aa9ad.netlify.app/ text</a>
+
+
 <img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/1.JPG"/>
 <img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/2.JPG"/>
 <img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/3.JPG"/>
-
-
 
 # Getting Started with Create React App
 
