@@ -1,4 +1,4 @@
-<img src="https://github.com/enesvardar/turkish-checkers-game/tree/master/img/1.JPG" width="500" height="300"/>
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/1.JPG" width="500" height="300"/>
 <img src="https://github.com/enesvardar/turkish-checkers-game/tree/master/img/2.JPG" width="500" height="300"/>
 <img src="https://github.com/enesvardar/turkish-checkers-game/tree/master/img/3.JPG" width="500" height="300"/>
 
