@@ -15,7 +15,7 @@ export const Player1 = () => {
         }}
       >
         {[...Array(count1)].map((elementInArray, index) => (
-          <div>
+          <div key={index}>
             <img
               style={{
                 position: "absolute",

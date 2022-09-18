@@ -11,12 +11,10 @@ function App() {
 
   return (
     <div className="App">
-      
       <Header />
 
       <div className="container">
-
-        <Player1/>
+        <Player1 />
 
         <div className="checkers">
           {elementArray.map((row, r_i) => {
@@ -24,9 +22,7 @@ function App() {
           })}
         </div>
 
-        <Player2/>
-
-
+        <Player2 />
       </div>
     </div>
   );
