@@ -1,4 +1,4 @@
-<a href="url">https://heartfelt-puppy-2aa9ad.netlify.app/ text</a>
+<a href="url">https://heartfelt-puppy-2aa9ad.netlify.app/</a>
 
 
 <img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/1.JPG"/>
