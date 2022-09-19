@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export const Player1 = () => {
+  /* Bu kompanentde 1. oyuncunun yediği taşlar gösteriliyor */
   const count1 = useSelector((state) => state.game.count1);
   return (
     <div className="player">

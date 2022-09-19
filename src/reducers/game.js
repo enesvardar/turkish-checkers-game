@@ -1,6 +1,12 @@
 const initialValue = {
   player: 1,
 
+  /*  Tahta üzerindeki elemanları tutan aray 
+      1: kahverengi
+      2: beyaz
+      11: kahverengi kral
+      22: beyaz kral 
+  */
   elementArray: [
     [0, 0, 0, 0, 0, 0, 0, 0],
     [1, 1, 1, 1, 1, 1, 1, 1],
@@ -23,12 +29,18 @@ const initialValue = {
     [0, 0, 0, 0, 0, 0, 0, 0],
   ],
 
+  /* Seçili taşın column ve row numaralrını tutar */
   selectedClmn: -1,
   selectedRow: -1,
+  /* Seçili taşın tipi tutan değişken */
   selectedStone: 0,
+
   continue: false,
+
+  /* Bir taş yeme durumunu tutan bayrak*/
   eating: false,
 
+  /* Eksilen taşları tutan sayıcılar*/
   count1: 0,
   count2: 0,
 };

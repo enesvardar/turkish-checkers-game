@@ -6,6 +6,9 @@ import { Empty } from "./Empty.js";
 export const Box = ({ c_i, r_i, color, type = { type } }) => {
   return (
     <div className="box" style={{ backgroundColor: color }}>
+
+      {/* tipe göre boş bir alanmı, içinde taş olan bir alanmı oluşturulacağına karar veriliyor */}
+
       {type != 0 ? (
         <CheckersPiece c_i={c_i} r_i={r_i} type={type} />
       ) : (

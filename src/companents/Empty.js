@@ -35,86 +35,143 @@ export const Empty = ({ c_i, r_i }) => {
   }, [selectedClmn, selectedRow, selectedStone]);
 
   const onClick = () => {
-
+    /* Bir taş hareket ettirildikten sonra, ilgili taş herhangi bir taşı yemiş ise,
+    tekrar yiyebileceği bir taş var ise, ilgili taş tekrar seçiliyor.
+    */
     if (selectedStone != 0 && moveFlag == true) {
-
       var flag = false;
 
-      if((elementArray[selectedRow][selectedClmn] == 1) && (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)){
-
-        if(r_i < 6 && elementArray[r_i + 1][c_i] == 2 && elementArray[r_i + 2][c_i] == 0){
-          flag = true
+      if (
+        elementArray[selectedRow][selectedClmn] == 1 &&
+        (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)
+      ) {
+        if (
+          r_i < 6 &&
+          elementArray[r_i + 1][c_i] == 2 &&
+          elementArray[r_i + 2][c_i] == 0
+        ) {
+          flag = true;
         }
 
-        if(c_i < 6 && elementArray[r_i][c_i + 1] == 2 && elementArray[r_i][c_i + 2] == 0){
-          flag = true
+        if (
+          c_i < 6 &&
+          elementArray[r_i][c_i + 1] == 2 &&
+          elementArray[r_i][c_i + 2] == 0
+        ) {
+          flag = true;
         }
 
-        if(c_i > 2 && elementArray[r_i][c_i - 1] == 2 && elementArray[r_i][c_i - 2] == 0){
-          flag = true
+        if (
+          c_i > 2 &&
+          elementArray[r_i][c_i - 1] == 2 &&
+          elementArray[r_i][c_i - 2] == 0
+        ) {
+          flag = true;
         }
-      }
-      else if((elementArray[selectedRow][selectedClmn] == 2) && (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)){
-
-        if(r_i > 1 && elementArray[r_i - 1][c_i] == 1 && elementArray[r_i - 2][c_i] == 0){
-          flag = true
+      } else if (
+        elementArray[selectedRow][selectedClmn] == 2 &&
+        (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)
+      ) {
+        if (
+          r_i > 1 &&
+          elementArray[r_i - 1][c_i] == 1 &&
+          elementArray[r_i - 2][c_i] == 0
+        ) {
+          flag = true;
         }
 
-        if(c_i < 6 && elementArray[r_i][c_i + 1] == 1 && elementArray[r_i][c_i + 2] == 0){
-          flag = true
+        if (
+          c_i < 6 &&
+          elementArray[r_i][c_i + 1] == 1 &&
+          elementArray[r_i][c_i + 2] == 0
+        ) {
+          flag = true;
         }
 
-        if(c_i > 2 && elementArray[r_i][c_i - 1] == 1 && elementArray[r_i][c_i - 2] == 0){
-          flag = true
+        if (
+          c_i > 2 &&
+          elementArray[r_i][c_i - 1] == 1 &&
+          elementArray[r_i][c_i - 2] == 0
+        ) {
+          flag = true;
         }
-      }
-      else if((elementArray[selectedRow][selectedClmn] == 11) && (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)){
-
-
-        if(r_i < selectedRow){
-          if(r_i > 1 && elementArray[r_i - 1][c_i] == 2 && elementArray[r_i - 2][c_i] == 0){
-
-            flag = true
+      } else if (
+        elementArray[selectedRow][selectedClmn] == 11 &&
+        (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)
+      ) {
+        if (r_i < selectedRow) {
+          if (
+            r_i > 1 &&
+            elementArray[r_i - 1][c_i] == 2 &&
+            elementArray[r_i - 2][c_i] == 0
+          ) {
+            flag = true;
+          }
+        } else {
+          if (
+            r_i < 6 &&
+            elementArray[r_i + 1][c_i] == 2 &&
+            elementArray[r_i + 2][c_i] == 0
+          ) {
+            flag = true;
           }
         }
-        else{
-          if(r_i < 6 && elementArray[r_i + 1][c_i] == 2 && elementArray[r_i + 2][c_i] == 0){
-            flag = true
+
+        if (
+          c_i < 6 &&
+          elementArray[r_i][c_i + 1] == 2 &&
+          elementArray[r_i][c_i + 2] == 0 &&
+          c_i > selectedClmn
+        ) {
+          flag = true;
+        }
+
+        if (
+          c_i > 2 &&
+          elementArray[r_i][c_i - 1] == 2 &&
+          elementArray[r_i][c_i - 2] == 0 &&
+          c_i < selectedClmn
+        ) {
+          flag = true;
+        }
+      } else if (
+        elementArray[selectedRow][selectedClmn] == 22 &&
+        (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)
+      ) {
+        if (r_i < selectedRow) {
+          if (
+            r_i > 1 &&
+            elementArray[r_i - 1][c_i] == 1 &&
+            elementArray[r_i - 2][c_i] == 0
+          ) {
+            flag = true;
+          }
+        } else {
+          if (
+            r_i < 6 &&
+            elementArray[r_i + 1][c_i] == 1 &&
+            elementArray[r_i + 2][c_i] == 0
+          ) {
+            flag = true;
           }
         }
 
-        if(c_i < 6 && elementArray[r_i][c_i + 1] == 2 && elementArray[r_i][c_i + 2] == 0 && c_i > selectedClmn){
-
-          flag = true
+        if (
+          c_i < 6 &&
+          elementArray[r_i][c_i + 1] == 1 &&
+          elementArray[r_i][c_i + 2] == 0 &&
+          c_i > selectedClmn
+        ) {
+          flag = true;
         }
 
-        if(c_i > 2 && elementArray[r_i][c_i - 1] == 2 && elementArray[r_i][c_i - 2] == 0 && c_i < selectedClmn){
-          flag = true
-        }
-
-      }
-
-      else if((elementArray[selectedRow][selectedClmn] == 22) && (Math.abs(selectedRow - r_i) >= 2 || Math.abs(selectedClmn - c_i) >= 2)){
-
-        if(r_i < selectedRow){
-
-          if(r_i > 1 && elementArray[r_i - 1][c_i] == 1 && elementArray[r_i - 2][c_i] == 0){
-
-            flag = true
-          }
-        }
-        else{
-          if(r_i < 6 && elementArray[r_i + 1][c_i] == 1 && elementArray[r_i + 2][c_i] == 0){
-            flag = true
-          }
-        }
-
-        if(c_i < 6 && elementArray[r_i][c_i + 1] == 1 && elementArray[r_i][c_i + 2] == 0 && c_i > selectedClmn){
-          flag = true
-        }
-
-        if(c_i > 2 && elementArray[r_i][c_i - 1] == 1 && elementArray[r_i][c_i - 2] == 0 && c_i < selectedClmn){
-          flag = true
+        if (
+          c_i > 2 &&
+          elementArray[r_i][c_i - 1] == 1 &&
+          elementArray[r_i][c_i - 2] == 0 &&
+          c_i < selectedClmn
+        ) {
+          flag = true;
         }
       }
 
@@ -122,15 +179,19 @@ export const Empty = ({ c_i, r_i }) => {
 
       if (flag == true) {
 
-        if(elementArray[selectedRow][selectedClmn] == 11 || elementArray[selectedRow][selectedClmn] == 22){
-          if(eating == true){
+        /* Eğer ilgili taş kral durumunda ise daha önce bir taş yeme durumuna bakılıyor
+          Kral değilse 2 birimlik bir hareketi, bir eleman yemiş anlamındadır.
+        */
+        if (
+          elementArray[selectedRow][selectedClmn] == 11 ||
+          elementArray[selectedRow][selectedClmn] == 22
+        ) {
+          if (eating == true) {
             action.select(r_i, c_i, dispatch);
           }
-        }
-        else{
+        } else {
           action.select(r_i, c_i, dispatch);
         }
-
       }
 
       setStyle({});

@@ -5,6 +5,9 @@ export const Row = ({ row, r_i }) => {
   return (
     <div className="row">
       {row.map((type, c_i) => {
+
+        /* Dama tahtası oluşturuluyor*/
+
         if (r_i % 2 == 1) {
           if (c_i % 2 == 1) {
             return (

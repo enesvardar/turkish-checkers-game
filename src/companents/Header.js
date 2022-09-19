@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import * as action from "../action/index";
 
 export const Header = () => {
-
   const game = useSelector((state) => state.game);
 
   const player = game.player;
@@ -13,85 +12,96 @@ export const Header = () => {
 
   useEffect(() => {
 
-    console.log(player)
-    var flag = false
-    var br_i = 0
-    var bc_i = 0
+    /* Oyun sırası değiştiğinde, sıra geçen oyuncudaki varsa, yeme durumunda olan taş seçiliyor*/
 
-    for(let r_i = 0 ; r_i < 8; r_i++){
+    var flag = false; /* yeme durumunda olan bir taşın durmunu bildiren flag*/ 
+    /* yeme durumunda olan taşın column ve row bilgileri*/
+    var br_i = 0; 
+    var bc_i = 0;
 
-      if(flag == true){
+    for (let r_i = 0; r_i < 8; r_i++) {
+      if (flag == true) {
         break;
       }
-      
-      for(let c_i = 0 ; c_i < 8; c_i++){
 
-          if(elementArray[r_i][c_i] == 1 && player == 1){
-
-            if((elementArray[r_i + 1][c_i] == 2 || elementArray[r_i + 1][c_i] == 22) && elementArray[r_i + 2][c_i] == 0){
-              flag = true
-              br_i = r_i;
-              bc_i = c_i;
-              break;
-            }
-
-            if((elementArray[r_i][c_i + 1] == 2 || elementArray[r_i][c_i + 1] == 22) && elementArray[r_i][c_i + 2] == 0){
-              flag = true
-              br_i = r_i;
-              bc_i = c_i;
-              break;
-            }
-
-            if((elementArray[r_i][c_i - 1] == 2 || elementArray[r_i][c_i - 1] == 22)&& elementArray[r_i][c_i - 2] == 0){
-              flag = true
-              br_i = r_i;
-              bc_i = c_i;
-              break;
-            }
-
+      for (let c_i = 0; c_i < 8; c_i++) {
+        if (elementArray[r_i][c_i] == 1 && player == 1) {
+          if (
+            (elementArray[r_i + 1][c_i] == 2 ||
+              elementArray[r_i + 1][c_i] == 22) &&
+            elementArray[r_i + 2][c_i] == 0
+          ) {
+            flag = true;
+            br_i = r_i;
+            bc_i = c_i;
+            break;
           }
-          else if(elementArray[r_i][c_i] == 2 && player == 2){
 
-            if((elementArray[r_i - 1][c_i] == 1 || elementArray[r_i - 1][c_i] == 11) && elementArray[r_i - 2][c_i] == 0){
-              flag = true
-              br_i = r_i;
-              bc_i = c_i;             
-              break;
-            }
+          if (
+            (elementArray[r_i][c_i + 1] == 2 ||
+              elementArray[r_i][c_i + 1] == 22) &&
+            elementArray[r_i][c_i + 2] == 0
+          ) {
+            flag = true;
+            br_i = r_i;
+            bc_i = c_i;
+            break;
+          }
 
-            if((elementArray[r_i][c_i + 1] == 1 || elementArray[r_i][c_i + 1] == 11) && elementArray[r_i][c_i + 2] == 0){
-              flag = true
-              br_i = r_i;
-              bc_i = c_i;              
-              break;
-            }
+          if (
+            (elementArray[r_i][c_i - 1] == 2 ||
+              elementArray[r_i][c_i - 1] == 22) &&
+            elementArray[r_i][c_i - 2] == 0
+          ) {
+            flag = true;
+            br_i = r_i;
+            bc_i = c_i;
+            break;
+          }
+        } else if (elementArray[r_i][c_i] == 2 && player == 2) {
+          if (
+            (elementArray[r_i - 1][c_i] == 1 ||
+              elementArray[r_i - 1][c_i] == 11) &&
+            elementArray[r_i - 2][c_i] == 0
+          ) {
+            flag = true;
+            br_i = r_i;
+            bc_i = c_i;
+            break;
+          }
 
-            if((elementArray[r_i][c_i - 1] == 1 || elementArray[r_i][c_i - 1] == 11) && elementArray[r_i][c_i - 2] == 0){
-              flag = true
-              br_i = r_i;
-              bc_i = c_i;
-              break;
-            }
+          if (
+            (elementArray[r_i][c_i + 1] == 1 ||
+              elementArray[r_i][c_i + 1] == 11) &&
+            elementArray[r_i][c_i + 2] == 0
+          ) {
+            flag = true;
+            br_i = r_i;
+            bc_i = c_i;
+            break;
+          }
 
-          } 
-          else if(elementArray[r_i][c_i] == 11){
-
-          } 
-          else if(elementArray[r_i][c_i] == 22){
-
-          } 
-
-
+          if (
+            (elementArray[r_i][c_i - 1] == 1 ||
+              elementArray[r_i][c_i - 1] == 11) &&
+            elementArray[r_i][c_i - 2] == 0
+          ) {
+            flag = true;
+            br_i = r_i;
+            bc_i = c_i;
+            break;
+          }
+        } else if (elementArray[r_i][c_i] == 11) {
+        } else if (elementArray[r_i][c_i] == 22) {
+        }
       }
     }
 
-
-    if(flag == true){
+    /* eğer ilgili flag true ise yeme durumunda olan taş kullanıcıya bırakılmadan seçiliyor*/
+    if (flag == true) {
       action.select(br_i, bc_i, dispatch);
     }
-
-  }, [player])
-  
+  }, [player]);
 
   return (
     <div className="header">
