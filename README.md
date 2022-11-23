@@ -1,8 +1,9 @@
-<img src="https://github.com/enesvardar/turkish-checkers-game/tree/master/img/Ekran%20Alıntısı.JPG" width="500" height="300"/>
-<img src="https://github.com/enesvardar/turkish-checkers-game/tree/master/img/Ekran%20Alıntısı.JPG" width="500" height="300"/>
-<img src="https://github.com/enesvardar/turkish-checkers-game/tree/master/img/Ekran%20Alıntısı.JPG" width="500" height="300"/>
+<a href="url">https://heartfelt-puppy-2aa9ad.netlify.app/</a>
 
 
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/1.JPG"/>
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/2.JPG"/>
+<img src="https://github.com/enesvardar/turkish-checkers-game/blob/master/img/3.JPG"/>
 
 # Getting Started with Create React App
 
